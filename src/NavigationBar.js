@@ -8,6 +8,8 @@ import Stack from 'react-bootstrap/Stack';
 import SignupForm from "./LoginNsignup/SignupForm";
 import LoginPage from './LoginNsignup/LoginPage';
 import HomePage from './Home';
+import Courses from './Courses';
+import About from './about';
 import './signup.css';
 
 const NavigationBar = () => {
@@ -17,6 +19,8 @@ const NavigationBar = () => {
     { id: 2, text: 'Final exams will be held next week' },
     { id: 3, text: 'Career fair on campus tomorrow' },
   ];
+
+  
 
   return (
 
@@ -31,11 +35,11 @@ const NavigationBar = () => {
       </Tab>
 
       <Tab eventKey="about" href="/about" title="About">
-
+        <About/>
       </Tab>
 
       <Tab eventKey="courses" href="/courses" title="Courses">
-        <CardComp />
+        <Courses />
       </Tab>
 
       {/* <Tab eventKey="calendar" href="/calendar" title="Calendar">

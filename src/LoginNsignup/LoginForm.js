@@ -1,4 +1,3 @@
-// import './signup_login.css';
 import React from 'react';
 import { Link, useNavigate  } from "react-router-dom";
 // import SignUp from './signup';
@@ -14,13 +13,13 @@ function LoginForm({ navigation }){
   const [inpval, setinpval] = useState({
     userEmail: "",
     userPassword: "",
-});
+  });
 
-const [data,setData] = useState([]);
+  const [data,setData] = useState([]);
 
-const [span,setSpan] = useState(false);
+  const [span,setSpan] = useState(false);
 
-const getdata = (e) => {
+  const getdata = (e) => {
 
       const{value,name} = e.target;
       console.log(value,name);
@@ -33,6 +32,7 @@ const getdata = (e) => {
           }
       })
   }
+
   const verifyUser = (e) =>{
     e.preventDefault();
     const {userEmail, userPassword} = inpval;
@@ -40,34 +40,55 @@ const getdata = (e) => {
       alert("Please enter email!")
     }else if(userPassword === ""){
       alert("Please enter password!")
-    }else{
-      
+    }
+    else{
       axios.post("http://localhost:5000/www/ProjectOne/BackEnd/login.php", inpval)
         .then((response) => {
-          console.log(response.data);
-          // if(response.data.status === 'true'){
-            // navigate('/dash');
-          // }else{
-          //   console.log(response.data);
-          // }
-      })
-    }
-  }
-    return (
-      <div className="App">
-          <div className='main'>
-            <h1>Login</h1>
-              <input type="email" id="email" name="userEmail" onChange={getdata}  placeholder="E-mail"/><br/>
-              <input type="password" id="password" name="userPassword" onChange={getdata}  placeholder="Password"/><br/>
-              <input type="submit" onClick={verifyUser} value="Submit"/>
-              {/* <nav>
-              New User? <Link to="/">SignUp</Link> here!
-              </nav> */}
-          </div>
-        </div>
-      );
-}
 
+          if (response.data.status === "success") {
+            navigate('/dashboard');
+          } else if (response.data.status === "fail") {
+            alert("Invalid Credentials!");
+          } else {
+            alert("An error occurred. Please try again later.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("An error occurred. Please try again later.");
+        });
+      }
+  }
+    //       var responseData;
+    //       // console.log(response.data);
+    //       responseData = response.data[0]['userName'];
+    //       console.log(responseData);
+    //       if (responseData === "fail") {
+    //         //No account yet or Wrong password, Please re-enter!
+    //         alert("Invalid Credentials !!");
+    //       } 
+    //       else {
+    //         //Success
+    //         navigate('/dashboard');  
+    //       }
+    //     })
+    //   }
+    // }
+
+      return(
+        <div className="App">
+            <div className='main'>
+              <h1>Login</h1>
+                <input type="email" id="email" name="userEmail" onChange={getdata}  placeholder="E-mail"/><br/>
+                <input type="password" id="password" name="userPassword" onChange={getdata}  placeholder="Password"/><br/>
+                <input type="submit" onClick={verifyUser} value="Submit"/>
+                {/* <nav>
+                New User? <Link to="/">SignUp</Link> here!
+                </nav> */}
+            </div>
+          </div>
+      )
+  }
 
 export default LoginForm;
 

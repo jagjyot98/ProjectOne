@@ -7,7 +7,7 @@ function LoginPage() {
       <h1>Login Page</h1>
       <LoginForm />
       <h3>OR</h3>
-            New User? <Link to="/">SignUp</Link> here!
+            New User? <Link to="/sign">SignUp</Link> here!
     </div>
   );
 }

@@ -1,7 +1,14 @@
+/* Carousel.Item{
+  height: 50px; 
+  margin: auto;
+  align-content: center;
+} */
+
 .carousel-image {
-    background-image: url('../images/digital_bull_4k_8k-7680x4320.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 500px; /* Adjust the height as needed */
+    /* background-image: url('./images/imageBull.jpg'); */
+    background-size:cover;
+    background-position:center;
+    align-items: center;
+    /* height: 20vh; Adjust the height as needed*/ 
   }
   

@@ -19,9 +19,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Routes>
-      <Route path='/' element={<SignupPage/>}></Route>
+      <Route path='/sign' element={<SignupPage/>}></Route>
       <Route path='/login' element={<LoginPage/>}></Route>
-      <Route path='/nav' element={<NavigationBar/>}></Route>
+      <Route path='/' element={<NavigationBar/>}></Route>
       <Route path='/home' element={<HomePage/>}></Route>
       <Route path='/course' element={<Courses/>}></Route>
       {/* <Route path='/update' element={<Update/>}></Route>

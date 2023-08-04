@@ -16,7 +16,7 @@
     // $stmt->execute();
 
     include ('dbconnect.php');
-    header("Access-Control-Allow-Origin: http://localhost:3000/");
+    // header("Access-Control-Allow-Origin: http://localhost:3000/");
 
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Authorization, Origin');
@@ -27,7 +27,7 @@
     $email = $data->userEmail;
     $password = $data->userPassword;
 
-    $stmt = $conn->prepare('insert into Users(userName, userEmail, userPassword) values (?,?,?);');
+    $stmt = $conn->prepare('insert into users(userName, userEmail, userPassword) values (?,?,?);');
     $stmt->bind_param("sss", $firstname, $email, $password);
     $stmt->execute();
     // $verifyEmail =  mysqli_num_rows($stmt);

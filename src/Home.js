@@ -22,6 +22,9 @@ import NavigationBar from './NavigationBar';
 import CarouselComponent from './CarouselComponent';
 import Stack from 'react-bootstrap/Stack';
 import { Breadcrumb } from 'react-bootstrap';
+// import C01 from './videos/C01.mp4'
+// import { View } from 'react-native';
+// import videoPlayerComp from './VideoPlayerComp';
 // import SignupForm from "./LoginNsignup/SignupForm";
 // import LoginPage from './LoginNsignup/LoginPage';
 // import { Link, useNavigate  } from "react-router-dom";
@@ -40,6 +43,8 @@ const HomePage = () => {
     { id: 3, text: 'Career fair on campus tomorrow' },
   ];
 
+  // const videoSource = require(C01); // Replace with your video file path
+
   return (
     <div className="dashboard">
       {/* <NavigationBar /> */}
@@ -49,6 +54,7 @@ const HomePage = () => {
       <h1>Welcome to the University Dashboard</h1>
 
       <CarouselComponent />
+    
 
       {/* <div className="courses">
         <h2>Your Courses</h2>
@@ -69,6 +75,11 @@ const HomePage = () => {
           </div>
         ))}
       </div>
+
+      {/* <View> */}
+      {/* <videoPlayerComp source={videoSource} /> */}
+      {/* Add other components or UI elements here */}
+    {/* </View> */}
     </div>
   );
 };
