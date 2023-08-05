@@ -8,6 +8,7 @@ import SignupPage from './LoginNsignup/SignupPage';
 import NavigationBar from './NavigationBar';
 import reportWebVitals from './reportWebVitals';
 import Courses from './Courses';
+import VideoPage from './VideoPage';
 import {
   BrowserRouter as Router,
   Routes,
@@ -24,6 +25,7 @@ root.render(
       <Route path='/' element={<NavigationBar/>}></Route>
       <Route path='/home' element={<HomePage/>}></Route>
       <Route path='/course' element={<Courses/>}></Route>
+      <Route path='/video' element={<VideoPage/>}></Route>
       {/* <Route path='/update' element={<Update/>}></Route>
       <Route path='/delete' element={<Delete/>}></Route> */}
     </Routes>
