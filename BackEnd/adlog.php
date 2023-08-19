@@ -1,5 +1,5 @@
 <?php
-include 'dbconnect.php';
+include 'adconnect.php';
 // this would allow cross origin requests from your react development server 
 // header("Access-Control-Allow-Origin: *"); 
 // header("Access-Control-Allow-Origin: http://localhost:5000");
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     $email = $data->userEmail; 
     $password = $data->userPassword; 
     // Perform login logic here 
-    $query = "SELECT * FROM users WHERE userEmail = ? AND userPassword = ?"; 
+    $query = "SELECT * FROM secondWay WHERE adEmail = ? AND adPassword = ?"; 
     $stmt = $conn->prepare($query); 
     $stmt->bind_param("ss", $email, $password); 
 

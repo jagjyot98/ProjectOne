@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "project";
+$dbname = "adproject";
 $conn = new mysqli($host, $username, $password, $dbname);
 // Check if the connection was successful 
 

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-const VideoPlayerComp = ({source}) => {
+const VideoPlayerComp = ({source, title}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
@@ -13,17 +13,20 @@ const VideoPlayerComp = ({source}) => {
       setIsPlaying(false);
     }
   };
-
+  
   return (
     <div>
-      <video ref={videoRef} width="640" height="360" controls>
-        <source src={source} type="video/mp4"/> 
+      {/* <video ref={videoRef} width="640" height="360" controls>
+        <source src="https://youtu.be/uyogvcSClp8" type="video/mp4"/> 
+        {/* https://youtu.be/uyogvcSClp8 */}
         {/* //type="video/mp4" /> */}
-        Your browser does not support the video tag.
-      </video>
-      <button onClick={togglePlay}>
+        {/* Your browser does not support the video tag. */}
+      {/* </video> */} */
+      {/* <iframe width="1280" height="720" src="https://www.youtube.com/playlist?list=PLdo5W4Nhv31a8UcMN9-35ghv8qyFWD9_S" title="Programming in C" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLdo5W4Nhv31a8UcMN9-35ghv8qyFWD9_S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      {/* <button onClick={togglePlay}>
         {isPlaying ? 'Pause' : 'Play'}
-      </button>
+      </button> */}
     </div>
   );
 };

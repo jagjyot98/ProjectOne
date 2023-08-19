@@ -1,79 +1,77 @@
-import React from 'react';
-import { Link, useNavigate  } from "react-router-dom";
-// import SignUp from './signup';
-import '../App.css';
-import axios, {Axios} from 'axios';
-import { useState } from 'react';
-import DashboardPage from '../Home';
-import InspectComp from '../SecondWayOut/InspectComp';    ///hideouts/inspectComp';
-import AdminLogin from '../SecondWayOut/AdminLogin';
+// import React from 'react';
+// import { Link, useNavigate  } from "react-router-dom";
+// // import SignUp from './signup';
+// import '../App.css';
+// import axios, {Axios} from 'axios';
+// import { useState } from 'react';
+// import LoginForm from '../LoginNsignup/LoginForm';
+
+function InspectComp({ Email })
+{
+  const emailRegex = /^abc\.xyz@email\.com$/;      ///^[a-zA-Z]+.xyz+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;       /////////////////////////////////////////////////
+  const testResult = emailRegex.test(Email);
+  console.log(Email);
+  return testResult;
+}
+
+export default InspectComp;
 
 
-function LoginForm({ navigation })
-{     //navigation
+//   const navigate = useNavigate();
 
-  const navigate = useNavigate();
+//   const [inpval, setinpval] = useState({
+//     userEmail: "",
+//     userPassword: "",
+//   });
 
-  const [inpval, setinpval] = useState({
-    userEmail: "",
-    userPassword: "",
-  });
-  // const [isValid, setIsValid] = useState(false);
+//   const [data,setData] = useState([]);
 
-  // setIsValid(InspectComp({ Email: inpval.userEmail }));
+//   const [span,setSpan] = useState(false);
 
-  const [data,setData] = useState([]);
+//   const getdata = (e) => {
 
-  const [span,setSpan] = useState(false);
+//       const{value,name} = e.target;
+//       console.log(value,name);
 
-  const getdata = (e) => {
+//       setinpval(()=>{
 
-      const{value,name} = e.target;
-      console.log(value,name);
+//           return{
+//               ...inpval,
+//               [name]:value
+//           }
+//       })
+//   }
 
-      setinpval(()=>{
+//   const verifyUser = (e) =>{
+//     e.preventDefault();
+    
 
-          return{
-              ...inpval,
-              [name]:value
-          }
-      })
-  }
+  
+    
+    // const {userEmail, userPassword} = inpval;
+    // if(userEmail === ""){
+    //   alert("Please enter email!")
+    // }else if(userPassword === ""){
+    //   alert("Please enter password!")
+    // }
+    // else{
+    //   axios.post("http://localhost:5000/www/ProjectOne/BackEnd/login.php", inpval)
+    //     .then((response) => {
 
-  const verifyUser = (e) =>{
-    e.preventDefault();
-    const {userEmail, userPassword} = inpval;
-    if(userEmail === ""){
-      alert("Please enter email!")
-    }else if(userPassword === ""){
-      alert("Please enter password!")
-    }
-    else if(!InspectComp({Email: userEmail}))
-    {   //False
-      axios.post("http://localhost:5000/www/ProjectOne/BackEnd/login.php", inpval)
-        .then((response) => {
-
-          console.log(response);
-
-          if (response.data['status'] === 'success') {
-            alert("User login success !");
-            // navigate('/dashboard');
-          } else if (response.data.status === 'fail') {
-            alert("User Invalid Credentials!");
-          } 
-          // else {
-          //   alert("An error occurred. Please try again later.");
-          // }
-        })
-        // .catch((error) => {
-        //   console.error("Error:", error);
-        //   alert("An error occurred. Please try again later.");
-        // });
-      } else{ 
-        // console.log()
-        
-        AdminLogin({inp: inpval}) }
-  }
+    //       if (response.data.status === "success") {
+    //         navigate('/dashboard');
+    //       } else if (response.data.status === "fail") {
+    //         alert("Invalid Credentials!");
+    //       } else {
+    //         alert("An error occurred. Please try again later.");
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error:", error);
+    //       alert("An error occurred. Please try again later.");
+    //     });
+    //   }
+//   }
     //       var responseData;
     //       // console.log(response.data);
     //       responseData = response.data[0]['userName'];
@@ -90,22 +88,19 @@ function LoginForm({ navigation })
     //   }
     // }
 
-      return(
-        <div className="App">
-            <div className='main'>
-              <h1>Login</h1>
-                <input type="email" id="email" name="userEmail" onChange={getdata}  placeholder="E-mail"/><br/>
-                <input type="password" id="password" name="userPassword" onChange={getdata}  placeholder="Password"/><br/>
-                <input type="submit" onClick={verifyUser} value="Submit"/>
-                {/* <nav>
-                New User? <Link to="/">SignUp</Link> here!
-                </nav> */}
-            </div>
-          </div>
-      )
-}
-
-export default LoginForm;
+    //   return(
+    //     <div className="App">
+    //         <div className='main'>
+    //           <h1>Login</h1>
+    //             <input type="email" id="email" name="userEmail" onChange={getdata}  placeholder="E-mail"/><br/>
+    //             <input type="password" id="password" name="userPassword" onChange={getdata}  placeholder="Password"/><br/>
+    //             <input type="submit" onClick={verifyUser} value="Submit"/>
+    //             {/* <nav>
+    //             New User? <Link to="/">SignUp</Link> here!
+    //             </nav> */}
+    //         </div>
+    //       </div>
+    //   )
 
 // import React, { Component } from 'react';
 // // import './login_signup.css';
