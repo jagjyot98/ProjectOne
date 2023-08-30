@@ -50,7 +50,7 @@ function LoginForm({ navigation })
     }
     else if(!InspectComp({Email: userEmail}))
     {   //False
-      axios.post("http://localhost:5000/www/ProjectOne/BackEnd/login.php", inpval)
+      axios.post("http://localhost:5000/www/ProjectOne/BackEnd/Operations/UserLogin.php", inpval)
         .then((response) => {
 
           console.log(response);
@@ -58,7 +58,7 @@ function LoginForm({ navigation })
           if (response.data['status'] === 'success') {
             alert("User login success !");
             // navigate('/dashboard');
-          } else if (response.data.status === 'fail') {
+          } else if (response.data['status'] === 'fail') {
             alert("User Invalid Credentials!");
           } 
           // else {

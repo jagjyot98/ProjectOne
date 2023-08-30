@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "project";
+$dbname = "Vproject";
 $conn = new mysqli($host, $username, $password, $dbname);
 // Check if the connection was successful 
 
@@ -11,6 +11,4 @@ if (!$conn) {
 }else{
     // echo("'status':'Connected'");
 }
-
-?> 
-
+?>

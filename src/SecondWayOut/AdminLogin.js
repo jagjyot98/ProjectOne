@@ -11,7 +11,7 @@ import inspectComp from './InspectComp';
 function AdminLogin({ inp }){
   // const navigate = useNavigate();
     // const verifyUser = () => {
-        axios.post("http://localhost:5000/www/ProjectOne/Backend/adlog.php", inp)
+        axios.post("http://localhost:5000/www/ProjectOne/Backend/Operations/adlog.php", inp)
         .then((response) => {
 
           console.log(response);

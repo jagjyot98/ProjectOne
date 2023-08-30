@@ -45,7 +45,7 @@ const NavigationBar = () => {
       {/* <Tab eventKey="calendar" href="/calendar" title="Calendar">
         Tab content for Profile
       </Tab> */}
-      <Tab classname ="signup" eventKey="signup" title="SignUp">
+      <Tab className ="signup" eventKey="signup" title="SignUp">
         <div>
           <h1>Signup Page</h1>
           <SignupForm />

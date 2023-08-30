@@ -30,7 +30,7 @@ function CarouselComponent() {
         <Carousel.Caption>
           {/* <h5>{courses.name}</h5> */}
           {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  title={course.name} */}
-          <a tabindex="0" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
+          <a tabIndex="0" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -40,7 +40,7 @@ function CarouselComponent() {
         <Carousel.Caption>
           {/* <h5>{courses.name}</h5> */}
           {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  title={course.name} */}
-          <a tabindex="1" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
+          <a tabIndex="1" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -50,7 +50,7 @@ function CarouselComponent() {
         <Carousel.Caption>
           {/* <h5>{courses.name}</h5> */}
           {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  title={course.name} */}
-          <a tabindex="2" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
+          <a tabIndex="2" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
         </Carousel.Caption>
       </Carousel.Item>
       {/* </div>

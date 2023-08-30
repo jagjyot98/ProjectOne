@@ -19,13 +19,13 @@ const Courses = () => {
       <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.375/build/spline-viewer.js"></script>
       <spline-viewer url="https://prod.spline.design/7tWf5D2TZj7u34F1/scene.splinecode"></spline-viewer> */}
       <div className='courseCards'>
-      <CardComp />
+        <CardComp />
       </div>
-      
+
       <div className='animeCube'>
-        <Anime1/>
+        <Anime1 />
       </div>
-      
+
       {/* Other components */}
     </div>
   );

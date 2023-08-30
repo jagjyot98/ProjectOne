@@ -1,5 +1,5 @@
 <?php
-include 'dbconnect.php';
+include 'vconnect.php';
 // this would allow cross origin requests from your react development server 
 // header("Access-Control-Allow-Origin: *"); 
 // header("Access-Control-Allow-Origin: http://localhost:5000");
@@ -39,6 +39,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 } else {
 $response['status'] = 'error';
 }
-
     echo json_encode($response);
 ?>
