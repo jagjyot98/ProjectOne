@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import './style/index.css';
 // import HomePage from './Home';
 import LoginPage from './LoginNsignup/LoginPage';
 import SignupPage from './LoginNsignup/SignupPage';
 import NavigationBar from './NavigationBar';
 import reportWebVitals from './reportWebVitals';
-import Courses from './Courses';
+import Courses from './Courses/Courses';
 import VideoPage from './VideoPage';
+import CoursePage from './Courses/CoursePage';
 // import VideoPlayerComp from './VideoPlayerComp';
 import {
   BrowserRouter as Router,
@@ -27,6 +28,7 @@ root.render(
       <Route path='/home' element={<HomePage/>}></Route>
       <Route path='/course' element={<Courses/>}></Route>
       <Route path='/video' element={<VideoPage/>}></Route>
+      <Route path='/course/:id' element={<CoursePage/>}></Route>
       {/* <Route path='/video' element={<VideoPlayerComp/>}></Route> */}
       {/* <Route path='/update' element={<Update/>}></Route>
       <Route path='/delete' element={<Delete/>}></Route> */}

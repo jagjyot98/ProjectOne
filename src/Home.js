@@ -17,7 +17,7 @@
 
 
 import React from 'react';
-import './dashboard.css';
+import './style/dashboard.css';
 import NavigationBar from './NavigationBar';
 import CarouselComponent from './CarouselComponent';
 import Stack from 'react-bootstrap/Stack';

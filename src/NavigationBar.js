@@ -3,14 +3,15 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import CarouselComponent from './CarouselComponent';
 import { Link, useNavigate  } from "react-router-dom";
-import CardComp from './card';
+import CardComp from './Courses/card';
 import Stack from 'react-bootstrap/Stack';
 import SignupForm from "./LoginNsignup/SignupForm";
 import LoginPage from './LoginNsignup/LoginPage';
 import HomePage from './Home';
-import Courses from './Courses';
+import Courses from './Courses/Courses';
 import About from './about';
-import './signup.css';
+import './style/signup.css'
+//'./style/signup.css';
 
 const NavigationBar = () => {
 

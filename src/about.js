@@ -1,5 +1,5 @@
 import React from 'react';
-import CardComp from './card';
+import CardComp from './Courses/card';
 // import { Application } from './runtime.js';
 import Anime2 from './anime2';
 // import './courses.css';

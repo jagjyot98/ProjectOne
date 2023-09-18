@@ -2,7 +2,7 @@ import React from 'react';
 import CardComp from './card';
 // import { Application } from './runtime.js';
 import Anime1 from './anime1';
-import './courses.css';
+import '../style/courses.css';
 
 const Courses = () => {
 

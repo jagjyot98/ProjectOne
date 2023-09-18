@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-import './carousel.css';
+import './style/carousel.css';
 import Stack from 'react-bootstrap/Stack';
 import imageBull from './images/imageBull.jpg'  
 // import { Application } from '@splinetool/runtime';

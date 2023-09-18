@@ -1,7 +1,12 @@
+// import React from React;
 import React, { useEffect, useState } from 'react'; // Import useEffect and useState
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import courseFetch from './courseFetch';
+// import CoursePage from './CoursePage';
+
+// handlePage = () => 
 
 const CardComp = () => {
   const [courses, setCourses] = useState([]); // State to hold the courses data
@@ -27,9 +32,12 @@ const CardComp = () => {
               <Card.Text>
                 Some quick example text to build on the card title and make up the
                 bulk of the card's content.
-                Instructor: {course[3]}
+                Instructor: {course[5]}
               </Card.Text>
-              <Button variant="primary" >More.</Button>
+              <Link to={`/course/${course[0]}`}>
+                <Button variant="primary">More</Button>
+              </Link>
+              {/* <Button variant="primary" onClick={() => CoursePage({course})}>More.</Button>     */}
             </Card.Body>
           </Card>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate  } from "react-router-dom";
 // import SignUp from './signup';
-import '../App.css';
+import '../style/App.css';
 import axios, {Axios} from 'axios';
 import { useState } from 'react';
 import DashboardPage from '../Home';
