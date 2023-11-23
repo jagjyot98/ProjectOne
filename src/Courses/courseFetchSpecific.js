@@ -13,9 +13,13 @@ function courseFetchSpecific(id)
         if (response.data['status'] === 'success') {
             return response.data.data;
           } else {
-            throw new Error(response.data['status'] + "An error occurred. Please try again later.");
+            throw new Error("An error occurred. Please try again later.");
           }
         })
+        .catch((error) => {
+          console.error("Error fetching courses:", error);
+          throw error; // Re-throw the error to be handled at the component level
+        });
     }
     export default courseFetchSpecific;
       // console.log(response);

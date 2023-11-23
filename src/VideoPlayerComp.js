@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react';
+import video from './Videos/C/C01.mp4';
 
 // src\videos\C01.mp4
+//src\Videos\C\C01.mp4
+//C:\Users\jagjy\Desktop\ReactProject\dockerContain\ProjectOne\src\Videos\C\C01.mp4
 const VideoPlayerComp = ({ source }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -13,7 +16,7 @@ const VideoPlayerComp = ({ source }) => {
     }
     setIsPlaying(!isPlaying);
   };
-
+console.log(video);
   return (
     <div style={styles.container}>
       <video ref={videoRef} style={styles.video} controls>

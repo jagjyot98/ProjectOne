@@ -1,11 +1,21 @@
+import { useParams } from 'react-router-dom';
 import React from 'react';
 import { View } from 'react-native';
+import './config';
 import VideoPlayerComp from './VideoPlayerComp'; // Replace with the correct path
-import videoFile from ''//'./videos/C01.mp4'
+// import videoFile from './Videos/C';
+// import videoFile from './Videos/C';//'E:/PROJECT/Videos/C/C01.mp4'; //'./videos/C01.mp4'
 
 const VideoPage = () => {     //will be turned to a parameterised function taking value for selected video
-//   const Vsource = "https://www.youtube.com/embed/uyogvcSClp8";    //require('https://www.youtube.com/watch?v=uyogvcSClp8&list=RDcMxECdQTYSc&index=3');//('./videos/C01.mp4'); // Replace with your video file path
-// const Vtitle = "BHANGRA MONKEY (feat. Tones &amp; I)  |  DJ FRENZY  |  Latest Punjabi Dance Remix Song 2019";
+
+const { patch } = useParams();
+console.log(patch);
+
+const videoFile = './Videos/C/' + patch; //'E:/PROJECT/Videos/C/C01.mp4';//String(global.config.globalVariables.strings.firstHalf)
+// C:\Users\jagjy\Desktop\ReactProject\dockerContain\ProjectOne\src\Videos
+// src\Videos\C\C01.mp4
+console.log(videoFile);
+
   return (
     <View>
       <VideoPlayerComp source={videoFile}/>
