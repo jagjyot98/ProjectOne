@@ -51,13 +51,14 @@ const CoursePage = () => {
         <div key={video[0]} className="courses">
           <Card style={{ width: '18rem' }}>
             <Card.Body>
-              <Card.Title>{video[2]}</Card.Title>
+              <Card.Title>{video[1]}</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up the
                 bulk of the card's content.
-                Instructor: {video[3]}
+                Instructor: {video[2]}
               </Card.Text>
-              <Link to={`/video/${video[1]}`}>
+              {/* videosFetch(course.courseTable) */}
+              <Link to={`/video`} state={{ videoPath: video[5], Title: video[1] }}>
                 <Button variant="primary">More</Button>
               </Link>
             </Card.Body>

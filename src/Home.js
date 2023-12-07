@@ -15,11 +15,26 @@
 
 // export default DashboardPage;
 
+  // Sample data for the dashboard
+  // const courses = [
+  //   { id: 1, name: 'Mathematics', instructor: 'John Doe' },
+  //   { id: 2, name: 'Physics', instructor: 'Jane Smith' },
+  //   { id: 3, name: 'Computer Science', instructor: 'Alex Johnson' },
+  // ];
+
+  // const notifications = [
+  //   { id: 1, text: 'Registration for Fall semester is now open' },
+  //   { id: 2, text: 'Final exams will be held next week' },
+  //   { id: 3, text: 'Career fair on campus tomorrow' },
+  // ];
+
 
 import React from 'react';
 import './style/dashboard.css';
 import NavigationBar from './NavigationBar';
 import CarouselComponent from './CarouselComponent';
+import { useEffect, useState } from 'react';
+import courseFetch from './Courses/courseFetch';
 import Stack from 'react-bootstrap/Stack';
 import { Breadcrumb } from 'react-bootstrap';
 // import C01 from './videos/C01.mp4'
@@ -30,18 +45,19 @@ import { Breadcrumb } from 'react-bootstrap';
 // import { Link, useNavigate  } from "react-router-dom";
 
 const HomePage = () => {
-  // Sample data for the dashboard
-  // const courses = [
-  //   { id: 1, name: 'Mathematics', instructor: 'John Doe' },
-  //   { id: 2, name: 'Physics', instructor: 'Jane Smith' },
-  //   { id: 3, name: 'Computer Science', instructor: 'Alex Johnson' },
-  // ];
 
-  const notifications = [
-    { id: 1, text: 'Registration for Fall semester is now open' },
-    { id: 2, text: 'Final exams will be held next week' },
-    { id: 3, text: 'Career fair on campus tomorrow' },
-  ];
+  const [courses, setCourses] = useState([]); // State to hold the courses data
+
+    useEffect(() => {
+      // Fetch courses when the component mounts
+      courseFetch()
+        .then((data) => {
+          setCourses(data); // Update the state with the fetched courses
+        })
+        .catch((error) => {
+          console.error("Error fetching courses:", error);
+        });
+    }, []);
 
   // const videoSource = require(C01); // Replace with your video file path
 
@@ -53,9 +69,8 @@ const HomePage = () => {
 
       <h1>Welcome to the University Dashboard</h1>
 
-      <CarouselComponent />
+      <CarouselComponent courses={courses}/>
     
-
       {/* <div className="courses">
         <h2>Your Courses</h2>
         {courses.map((course) => (
@@ -68,10 +83,10 @@ const HomePage = () => {
       </div> */}
 
       <div className="notifications">
-        <h2>Notifications</h2>
-        {notifications.map((notification) => (
-          <div key={notification.id} className="notification">
-            <p>{notification.text}</p>
+        <h2>Available Courses:</h2>
+        {courses.map((course) => (
+          <div key={course[0]} className="notification">
+            <p>{course[2]}</p>
           </div>
         ))}
       </div>

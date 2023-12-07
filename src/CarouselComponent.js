@@ -4,13 +4,13 @@ import Stack from 'react-bootstrap/Stack';
 import imageBull from './images/imageBull.jpg'  
 // import { Application } from '@splinetool/runtime';
 
-function CarouselComponent() {
+function CarouselComponent({courses}) {
 
-  const courses = [
-    { id: 1, name: 'Mathematics', instructor: 'John Doe' },
-    { id: 2, name: 'Physics', instructor: 'Jane Smith' },
-    { id: 3, name: 'Computer Science', instructor: 'Alex Johnson' },
-  ];
+  // const courses = [
+  //   { id: 1, name: 'Mathematics', instructor: 'John Doe' },
+  //   { id: 2, name: 'Physics', instructor: 'Jane Smith' },
+  //   { id: 3, name: 'Computer Science', instructor: 'Alex Johnson' },
+  // ];
 
 
 
@@ -23,36 +23,38 @@ function CarouselComponent() {
 
   return (
     <Carousel variant="dark">
-      <Carousel.Item>
+      {courses.map((course) => (
+      <Carousel.Item key={course[0]}>
       {/* className="d-md-block h-10" */}
-        <img width={1000} height={500} src={imageBull} alt="First slide" />
+        <img width={1000} height={500} src={course[7]} alt="First slide" />
         {/* <div className="carousel-image"></div> */}
         <Carousel.Caption>
-          {/* <h5>{courses.name}</h5> */}
-          {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  title={course.name} */}
+          <h1>{course[2]}</h1>
+          <p>Instructor: {course[3]}</p>
           <a tabIndex="0" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
         </Carousel.Caption>
       </Carousel.Item>
 
-      <Carousel.Item>
-        <img width={1000} height={500} src={imageBull} alt="Second slide" />
-        {/* <div className="carousel-image"></div> */}
-        <Carousel.Caption>
-          {/* <h5>{courses.name}</h5> */}
-          {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  title={course.name} */}
-          <a tabIndex="1" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
-        </Carousel.Caption>
-      </Carousel.Item>
+      // <Carousel.Item>
+      //   <img width={1000} height={500} src={imageBull} alt="Second slide" />
+      //   {/* <div className="carousel-image"></div> */}
+      //   <Carousel.Caption>
+      //     {/* <h5>{courses.name}</h5> */}
+      //     {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  title={course.name} */}
+      //     <a tabIndex="1" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
+      //   </Carousel.Caption>
+      // </Carousel.Item>
 
-      <Carousel.Item>
-        <img width={1000} height={500} src={imageBull} alt="Third slide" />
-        {/* <div className="carousel-image"></div> */}
-        <Carousel.Caption>
-          {/* <h5>{courses.name}</h5> */}
-          {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  title={course.name} */}
-          <a tabIndex="2" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
-        </Carousel.Caption>
-      </Carousel.Item>
+      // <Carousel.Item>
+      //   <img width={1000} height={500} src={imageBull} alt="Third slide" />
+      //   {/* <div className="carousel-image"></div> */}
+      //   <Carousel.Caption>
+      //     {/* <h5>{courses.name}</h5> */}
+      //     {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>  title={course.name} */}
+      //     <a tabIndex="2" className="btn btn-lg btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content={courses.instructor}>{courses.name}</a>
+      //   </Carousel.Caption>
+      // </Carousel.Item>
+      ))}
       {/* </div>
       ))} */}
     </Carousel >

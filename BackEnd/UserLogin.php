@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
     if ($stmt->execute()) { 
         $result = $stmt->get_result();
-
         if ($result->num_rows > 0) { 
             // $user = $result->fetch_assoc();
             $arrayu = mysqli_fetch_array($result);
@@ -36,8 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $response['status'] = 'error';
     }
     $stmt->close();
+
 } else {
-$response['status'] = 'error';
+    $response['status'] = 'error';
 }
     echo json_encode($response);
 ?>

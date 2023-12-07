@@ -27,7 +27,7 @@ root.render(
       <Route path='/' element={<NavigationBar/>}></Route>
       <Route path='/home' element={<HomePage/>}></Route>
       <Route path='/course' element={<Courses/>}></Route>
-      <Route path='/video/:patch' element={<VideoPage/>}></Route>
+      <Route path='/video' element={<VideoPage/>}></Route>
       <Route path='/course/:id' element={<CoursePage/>}></Route>
       {/* <Route path='/video' element={<VideoPlayerComp/>}></Route> */}
       {/* <Route path='/update' element={<Update/>}></Route>

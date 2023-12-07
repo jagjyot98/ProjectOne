@@ -4,28 +4,34 @@ import video from './Videos/C/C01.mp4';
 // src\videos\C01.mp4
 //src\Videos\C\C01.mp4
 //C:\Users\jagjy\Desktop\ReactProject\dockerContain\ProjectOne\src\Videos\C\C01.mp4
-const VideoPlayerComp = ({ source }) => {
+const VideoPlayerComp = ({ source, title }) => {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
 
-  const handlePlayPause = () => {
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-console.log(video);
+  // const handlePlayPause = () => {
+  //   if (isPlaying) {
+  //     videoRef.current.pause();
+  //   } else {
+  //     videoRef.current.play();
+  //   }
+  //   setIsPlaying(!isPlaying);
+  // };
+console.log(source);
+
+
   return (
-    <div style={styles.container}>
-      <video ref={videoRef} style={styles.video} controls>
-        <source src={source} type="video/mp4" />
+    <div style={styles.container}>  
+    {/* //width="1180" height="664"  */}
+      {/* <iframe ref={videoRef} style={styles.video} src={source} title={title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
+      {/* <iframe width="560" height="315" src={source} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen="true"></iframe> */}
+      <iframe style={styles.video} src={source} title={title} frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+      {/* <video ref={videoRef} style={styles.video} controls>
+        <source src={"https://youtu.be/EjavYOFoJJ0?si=gA5KmSgu9bSsem7u"} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
-      <button onClick={handlePlayPause} style={styles.playPauseButton}>
+      </video> */}
+      {/* <button onClick={handlePlayPause} style={styles.playPauseButton}>
         {isPlaying ? 'Pause' : 'Play'}
-      </button>
+      </button> */}
     </div>
   );
 };
@@ -39,6 +45,7 @@ const styles = {
   video: {
     width: '100%',
     maxWidth: '800px',
+    height:'400px'
   },
   playPauseButton: {
     marginTop: '10px',

@@ -29,10 +29,11 @@ const CardComp = () => {
           <Card style={{ width: '18rem' }}>
             <Card.Body>
               <Card.Title>{course[2]}</Card.Title>
+              <Card.Img src={course[7]}></Card.Img>
               <Card.Text>
+              Course owner: {course[3]}<br/>
                 Some quick example text to build on the card title and make up the
                 bulk of the card's content.
-                Instructor: {course[5]}
               </Card.Text>
               <Link to={`/course/${course[0]}`}>
                 <Button variant="primary">More</Button>

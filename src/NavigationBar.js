@@ -22,7 +22,6 @@ const NavigationBar = () => {
   ];
 
   
-
   return (
 
     <Tabs
