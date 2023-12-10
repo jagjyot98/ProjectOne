@@ -4,7 +4,8 @@ import { Link, useNavigate  } from "react-router-dom";
 import '../style/App.css';
 import axios, {Axios} from 'axios';
 import { useState } from 'react';
-import DashboardPage from '../Home';
+// import HomePage from '../Home';
+import NavigationBar from '../NavigationBar'
 import InspectComp from '../SecondWayOut/InspectComp';    ///hideouts/inspectComp';
 import AdminLogin from '../SecondWayOut/AdminLogin';
 
@@ -50,14 +51,16 @@ function LoginForm({ navigation })
     }
     else if(!InspectComp({Email: userEmail}))
     {   //False
-      axios.post("http://localhost:5000/www/ProjectOne/BackEnd/Operations/UserLogin.php", inpval)
+      console.log(InspectComp({Email: userEmail}))
+
+      axios.post("http://localhost:5000/www/ProjectOne/BackEnd/UserLogin.php", inpval)
         .then((response) => {
 
           console.log(response);
 
           if (response.data['status'] === 'success') {
-            alert("User login success !");
-            // navigate('/dashboard');
+            // alert("User login success !");
+            navigate('/home');
           } else if (response.data['status'] === 'fail') {
             alert("User Invalid Credentials!");
           } 

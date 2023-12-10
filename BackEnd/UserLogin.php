@@ -1,16 +1,11 @@
 <?php
 include 'dbconnect.php';
-// this would allow cross origin requests from your react development server 
-// header("Access-Control-Allow-Origin: *"); 
-// header("Access-Control-Allow-Origin: http://localhost:5000");
-
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Authorization, Origin');
+header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Authorization, Origin');
 
 $response = array();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') 
-{ 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
     $data = json_decode(file_get_contents("php://input")); 
     $email = $data->userEmail; 
     $password = $data->userPassword; 
@@ -35,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $response['status'] = 'error';
     }
     $stmt->close();
-
+    // echo $response;
 } else {
     $response['status'] = 'error';
 }
-    echo json_encode($response);
+echo json_encode($response);
 ?>

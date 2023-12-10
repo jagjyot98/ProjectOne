@@ -23,10 +23,11 @@ root.render(
   <Router>
     <Routes>
       <Route path='/sign' element={<SignupPage/>}></Route>
-      <Route path='/login' element={<LoginPage/>}></Route>
-      <Route path='/' element={<NavigationBar/>}></Route>
-      <Route path='/home' element={<HomePage/>}></Route>
-      <Route path='/course' element={<Courses/>}></Route>
+      {/* <Route path='/login' element={<LoginPage/>}></Route> */}
+      <Route path='/' element={<LoginPage/>}></Route>
+      {/* <Route path='/home' element={<HomePage/>}></Route> */}
+      <Route path='/home' element={<NavigationBar/>}></Route>
+      {/* <Route path='/course' element={<Courses/>}></Route> */}
       <Route path='/video' element={<VideoPage/>}></Route>
       <Route path='/course/:id' element={<CoursePage/>}></Route>
       {/* <Route path='/video' element={<VideoPlayerComp/>}></Route> */}
